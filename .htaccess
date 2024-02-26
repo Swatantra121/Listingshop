@@ -1,0 +1,22 @@
+RewriteEngine On
+
+#New Url
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^([^.]+)/([^.]+)$ listing/listing.php?city=$1&query=$2 [QSA,NC,L] 
+
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^user/([^.]+)$ user-profile.php?name=$1 [QSA,NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^person/([^.]+)$ user-profile-view.php?name=$1 [QSA,NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^business/([^.]+)$ business_profile_view.php?b=$1 [QSA,NC,L]
+
+#RewriteCond %{REQUEST_FILENAME} !-s
+#RewriteRule ^([^.]+)/([^.]+)/([^.]+)/([0-9a-zA-z]+) list-search-page.php?md=$1&id=$4&bus=$2&ad=$3 [QSA,NC,L] 
+
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^view/([^.]+)/([^.]+)/([^.]+)/([0-9a-zA-z]+) business_user_view.php?md=$1&id=$4&bus=$2&ad=$3 [QSA,NC,L] 
+
+
